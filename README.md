@@ -6,36 +6,36 @@
 
 ###### 1、自动批量化打包
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-11-18-image.png)
+![自动化打包](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/AutoBuild.png)
 
 ###### 2、切换MainRoot的工程模式
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-12-09-image.png)
+![DebuTool](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/DebugTool.png)
 
 ###### 3、应用签名
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-12-39-image.png)
+![keystore](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/Keystore.png)
 
 ##### 运行时方法
 
 ###### 1、主控脚本
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-14-11-image.png)
+![MainRoot](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/MainRoot.png)
 
 ###### 2、存档读档
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-15-05-image.png)
+![SaveManager](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/SaveManager.png)
 
 ###### 3、文件读写
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-15-22-image.png)
+![FileIO](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/FileIO.png)
 
 ###### 4、单例脚本
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-15-45-image.png)
+![Sigin](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/Silg.png)
 
 ### 内置插件
 
 ###### 1、Odin编译器美化插件
 
-![](C:\Users\Administrator\AppData\Roaming\marktext\images\2025-07-08-15-17-01-image.png)
+![Odin](https://github.com/KyuusaiHunter/DevelopmentDocs/blob/main/Images/Odin.png)
