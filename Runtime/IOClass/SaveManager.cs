@@ -3,61 +3,63 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
-public class SaveManager : MonoSingleton<SaveManager>
+namespace StandardizedProcess.Runtime
 {
-    private SaveData CurrentData;
-    private string savePath;
+    public class SaveManager : MonoSingleton<SaveManager>
+    {
+        private SaveData CurrentData;
+        private string savePath;
 
-    protected override void OnStart()
-    {
-        savePath = Path.Combine(Application.persistentDataPath, "save.json");
-        Load();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void Save()
-    {
-        CurrentData.Setting = MainRoot.Instance.Setting;
-        string json = JsonUtility.ToJson(CurrentData, true);
-        File.WriteAllText(savePath, json);
-    }
-    public void Load()
-    {
-        if (File.Exists(savePath))
+        protected override void OnStart()
         {
-            string json = File.ReadAllText(savePath);
-            CurrentData = JsonUtility.FromJson<SaveData>(json);
+            savePath = Path.Combine(Application.persistentDataPath, "save.json");
+            Load();
         }
-        else
-        {
-            CurrentData = new SaveData(); // 默认初始值
-        }
-    }
-    public void SetData()
-    {
-        MainRoot.Instance.Setting = CurrentData.Setting;
-        MainRoot.Instance.AwakeSetLanguage();
-    }
-    private void OnApplicationQuit()
-    {
-        Save();
-    }
 
-    private void OnApplicationPause(bool pause)
-    {
-        if (pause) Save();
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+        public void Save()
+        {
+            CurrentData.Setting = MainRoot.Instance.Setting;
+            string json = JsonUtility.ToJson(CurrentData, true);
+            File.WriteAllText(savePath, json);
+        }
+        public void Load()
+        {
+            if (File.Exists(savePath))
+            {
+                string json = File.ReadAllText(savePath);
+                CurrentData = JsonUtility.FromJson<SaveData>(json);
+            }
+            else
+            {
+                CurrentData = new SaveData(); // 默认初始值
+            }
+        }
+        public void SetData()
+        {
+            MainRoot.Instance.Setting = CurrentData.Setting;
+            MainRoot.Instance.AwakeSetLanguage();
+        }
+        private void OnApplicationQuit()
+        {
+            Save();
+        }
+
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause) Save();
+        }
     }
-}
-[Serializable]
-public class SaveData
-{
-    public string ExtraInfo = "";
-    [SerializeField]
-    public ProjectSetting Setting = new ProjectSetting();
-    
+    [Serializable]
+    public class SaveData
+    {
+        public string ExtraInfo = "";
+        [SerializeField]
+        public ProjectSetting Setting = new ProjectSetting();
+
+    }
 }

@@ -2,33 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using StandardizedProcess;
 
-public class DebugTool
+namespace StandardizedProcess.Editor
 {
-    [MenuItem("Tools/DebugTool/设置为开发者模式")]
-    public static void DebugModel()
+    public class DebugTool
     {
-        try
+        [MenuItem("Tools/DebugTool/设置为开发者模式")]
+        public static void DebugModel()
         {
-            MainRoot.Instance.model = MainRoot.Model.Debug;
-            UnityEngine.Debug.Log("已切换为开发者模式");
+            try
+            {
+                MainRoot.Instance.model = MainRoot.Model.Debug;
+                UnityEngine.Debug.Log("已切换为开发者模式");
+            }
+            catch
+            {
+                UnityEngine.Debug.LogError("切换开发者模式失败，请检查设置！");
+            }
         }
-        catch
+        [MenuItem("Tools/DebugTool/设置为发布模式")]
+        public static void ReleaseModel()
         {
-            UnityEngine.Debug.LogError("切换开发者模式失败，请检查设置！");
-        }
-    }
-    [MenuItem("Tools/DebugTool/设置为发布模式")]
-    public static void ReleaseModel()
-    {
-        try
-        {
-            MainRoot.Instance.model = MainRoot.Model.Release;
-            UnityEngine.Debug.Log("已切换为发布模式");
-        }
-        catch
-        {
-            UnityEngine.Debug.LogError("切换发布模式失败，请检查设置！");
+            try
+            {
+                MainRoot.Instance.model = MainRoot.Model.Release;
+                UnityEngine.Debug.Log("已切换为发布模式");
+            }
+            catch
+            {
+                UnityEngine.Debug.LogError("切换发布模式失败，请检查设置！");
+            }
         }
     }
 }
+
