@@ -1,7 +1,7 @@
 {
   "name": "com.kyuusaihunter.standardizedprocess",
   "displayName": "Standardized Process",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "unity": "2021.3",
   "description": "",
   "dependencies": {
