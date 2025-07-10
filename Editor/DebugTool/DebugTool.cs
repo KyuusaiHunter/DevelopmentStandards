@@ -13,7 +13,7 @@ namespace StandardizedProcess.Editor
         {
             try
             {
-                MainRoot.Instance.model = MainRoot.Model.Debug;
+                MainRoot.Instance.发布版本 = MainRoot.Model.Debug;
                 UnityEngine.Debug.Log("已切换为开发者模式");
             }
             catch
@@ -26,7 +26,7 @@ namespace StandardizedProcess.Editor
         {
             try
             {
-                MainRoot.Instance.model = MainRoot.Model.Release;
+                MainRoot.Instance.发布版本 = MainRoot.Model.Release;
                 UnityEngine.Debug.Log("已切换为发布模式");
             }
             catch
