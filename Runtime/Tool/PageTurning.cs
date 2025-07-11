@@ -14,6 +14,11 @@ public class PageTurning : MonoBehaviour
     {
         NextButton?.onClick.AddListener(NextPage);
         PreviousButton?.onClick.AddListener(PreviousPage);
+        for(int i = 0; i < Pages.Length; i++)
+        {
+            if (i != 0)
+                Pages[i].SetActive(false);
+        }
         if (Pages.Length == 1)
         {
             NextButton.gameObject.SetActive(false);
