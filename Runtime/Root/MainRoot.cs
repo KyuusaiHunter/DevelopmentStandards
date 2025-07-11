@@ -7,6 +7,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
 using Sirenix.OdinInspector;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace StandardizedProcess
 {
     [DefaultExecutionOrder(-1000)]
@@ -72,6 +76,15 @@ namespace StandardizedProcess
             if(Player == null)
                 Player = GameObject.FindGameObjectWithTag("Player");
             DontDestroyOnLoad(Player);
+        }
+        public void Quit()
+        {
+#if !UNITY_EDITOR
+            Application.Quit();
+#else
+            EditorApplication.isPlaying = false;
+#endif
+
         }
         /// <summary>
         /// ≤‚ ‘∞ÊÀÆ”°
